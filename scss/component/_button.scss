@@ -1,0 +1,41 @@
+.button-blue {
+    @include button($color-blue-200, $color-white, $color-blue-200);
+    transition: all 0.3s;
+    &:hover {
+        @include button($color-white, $color-blue-200, $color-blue-200);
+    }
+}
+.n-button-blue {
+    @include button($color-white, $color-blue-200, $color-blue-200);
+    transition: all 0.3s;
+    &:hover {
+        @include button($color-blue-200, $color-white, $color-blue-200);
+    }
+}
+.button-white {
+    @include button($color-white, $color-blue-200, $color-blue-200);
+    transition: all 0.3s;
+    &:hover {
+        @include button($color-blue-200, $color-white, $color-blue-200);
+    }
+}
+.n-button-white {
+    @include button(transparent, $color-white, $color-white);
+    transition: all 0.3s;
+    &:hover {
+        @include button($color-white, $color-blue-200, $color-white);
+    }
+}
+.button-red {
+    @include button($color-red-100, $color-white, $color-red-100);
+    transition: all 0.3s;
+    &:hover {
+        @include button($color-white, $color-red-100, $color-red-100);
+    }
+}
+.btn-collapse{
+    border: none;
+    background-color: $color-blue-300;
+    color: $color-white;
+    font-size: $fontSize-3;
+}

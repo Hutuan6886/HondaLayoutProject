@@ -1,0 +1,17 @@
+.icon{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: $color-blue-300;
+    text-align: center;
+    line-height: 30px;      //! căn giữa chiều dọc
+    font-size: $fontSize-1;
+    color: $color-white;
+    cursor: pointer;
+
+    transition: all .5s;
+    &:hover{
+        background-color: $color-darkBlue-100;
+    }
+}

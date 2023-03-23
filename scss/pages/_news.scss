@@ -1,0 +1,40 @@
+#news {
+    margin-bottom: $mg-50;
+
+    height: 300px;
+    .news-content {
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        text-align: center;
+        color: $color-white;
+        .row {
+            height: 100%;
+            .news-left {
+                background-image: url(../../img/intro-3.jpg);
+                @extend %background;
+                background-clip: content-box;
+                button {
+                    padding: $pd-6 $pd-20;
+                }
+            }
+            .news-right {
+                background-image: url(../../img/intro-4.jpg);
+                @extend %background;
+                background-clip: content-box;
+                button {
+                    padding: $pd-6 $pd-20;
+                }
+            }
+            .news-item {
+                transform: translateY(80%);
+
+                padding: 0 $pd-10;
+                h3{
+                    font-size: $fontSize-2;
+                    font-weight: $fontWeight-bold;
+                }
+            }
+        }
+    }
+}

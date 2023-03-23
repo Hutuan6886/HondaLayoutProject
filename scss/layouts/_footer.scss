@@ -1,0 +1,104 @@
+#footer {
+    .footer-content {
+        width: 90%;
+        margin: 0 auto $mg-50;
+        .footer-head {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+
+            border-bottom: 1px solid $color-white-300;
+            .footer-item {
+                margin-bottom: $mg-40;
+                h3 {
+                    font-size: $fontSize-2;
+                    font-weight: $fontWeight-bold;
+                    margin-bottom: $mg-20;
+                }
+                ul {
+                    padding: 0;
+                    li {
+                        list-style: none;
+                        margin-bottom: $mg-10;
+                        a {
+                            text-decoration: none;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer-mid{
+            display: flex;
+            justify-content: space-between;
+
+            margin: $mg-20 0;
+            .footer-mid-left{
+                h3{
+                    font-size: $fontSize-2;
+                    font-weight: $fontWeight-bold;
+                }
+            }
+            .footer-mid-right{
+                text-align: right;
+                button{
+                    padding: $pd-6 $pd-20;
+                }
+            }
+        }
+    }
+    .footer-bot{
+        background-color: $color-blue-300;
+        .footer-bot-content{
+            width: 90%;
+            margin: 0 auto;
+            padding: $pd-20 0;
+
+            color: $color-white;
+
+            .footer-bot-item{
+                display: flex;
+                justify-content: space-between;
+                p {
+                    width: 40%;
+                    a{
+                        color: $color-white;
+                        padding: 0 $pd-6 - 3;
+                        font-style: italic;
+                    }
+                }
+                .footer-bot-nav{
+                    ul{
+                        li{
+                            display: inline;
+                            list-style: none;
+
+                            border-right: 1px solid $color-white;
+                            a{
+                                text-decoration: none;
+                                color: $color-white;
+                                padding: 0 $pd-20;
+                                &:hover{
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .footer-bot-img{
+                display: flex;
+                justify-content: space-between;
+
+                .img-partner-thin{
+                    width: 70px;
+                }
+                .img-partner-long{
+                    width: 100px;
+                }
+            }
+        }
+    }
+}

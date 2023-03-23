@@ -1,0 +1,32 @@
+.none-border{
+    border: 0 !important;   
+}
+
+.title{
+    font-size: $fontSize-5;     
+    font-weight: $fontWeight-300;  
+    text-align: center;
+    color: $color-darkBlue-100;
+}
+
+
+.search-type {
+    width: 100%;
+    background-color: $color-white-100;
+    text-align: center;
+
+    padding: $pd-6 $pd-6;
+    i {
+        font-size: $fontSize-2;
+    }
+    input {
+        border: none;
+        width: 80%;
+        background-color: $color-white-100;
+        margin: 0 $mg-30;
+        outline: none; //! outline là 1 border hiện lên khi click vào ô input
+    }
+    .n-button-blue {
+        padding: $pd-6 $pd-25;
+    }
+}

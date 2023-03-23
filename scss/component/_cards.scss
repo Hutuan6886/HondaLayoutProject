@@ -1,0 +1,60 @@
+//todo: vehicle card header
+.vehicle-card {
+    margin-bottom: $mg-40;
+    .vehicle-img {
+        //todo: Khi hover vào làm hình đầu ẩn đi hình sau hiện ra
+        &:hover > img:first-child {
+            //! Khi hover vào .vehicle-card thì img:first-child sẽ thực thi
+            display: none;
+        }
+        &:hover > img:nth-child(2) {
+            display: block;
+        }
+
+        img:first-child {
+            width: 100%;
+        }
+        img:nth-child(2) {
+            width: 100%;
+            display: none;
+        }
+    }
+    h1 {
+        font-size: $fontSize-2;
+        font-weight: $fontWeight-bold;
+        color: $color-darkBlue-200;
+    }
+    .text-card {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+        .text-left {
+            .prices {
+                font-size: $fontSize-3;
+                margin-bottom: 5px;
+                color: $color-black;
+            }
+            p {
+                margin-bottom: 5px;
+                color: $color-darkBlue-200;
+            }
+        }
+        .text-right {
+            .prices {
+                font-size: $fontSize-3;
+                margin-bottom: 5px;
+                color: $color-black;
+            }
+            p {
+                margin-bottom: 5px;
+                color: $color-darkBlue-200;
+            }
+        }
+    }
+    .vehicle-btn {
+        margin-top: $mg-20 - 3;
+        button {
+            padding: $pd-6 $pd-30;
+        }
+    }
+}

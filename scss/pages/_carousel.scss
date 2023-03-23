@@ -1,0 +1,40 @@
+#carousel{
+    height: 750px;
+    background-color: $color-darkBlue-200;
+    .mySwiper{
+        height: 70%;
+        padding-top: 60px;
+        .swiper-wrapper{
+            .swiper-slide {
+                height: 93%;
+                text-align: center;
+
+                position: relative;
+                .button-red{
+                    display: inline;
+                    padding: $pd-10 $pd-25;
+                    cursor: pointer;
+
+                    position: absolute;
+                    left: 50%;
+                    top: 80%;
+                    transform: translateX(-50%);
+
+                    box-shadow: 1px 1px 11px 3px rgb(102 105 110);
+                }
+            }
+        }
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 9px;
+                height: 9px;
+                transition: all .5s;
+                &:hover{
+                    background-color: #007aff;
+                    opacity: 1;
+                }
+            }
+            
+        }
+    }
+}

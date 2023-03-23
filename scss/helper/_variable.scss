@@ -1,0 +1,62 @@
+//! Những thuộc tính anfo được sử dụng lặp đi lặp lại giống nhau thì khai báo thành biến
+//! ví dụ như fs,fw, box-shadow, khi các giá trị của thuộc tính nào được sử dụng lại nhiều lần thì khai báo thành biến
+
+//todo: color
+$color-white: #fff;
+$color-white-100: #f5f5f5;
+$color-white-300:rgb(211, 211, 211);
+$color-white-400:rgb(163, 166, 172);
+
+$color-blue-100: #85b0d4;
+$color-blue-200: #2198dc;
+$color-blue-300: #007cc3;
+
+$color-darkBlue-100: #00446b;
+$color-darkBlue-200: #00324f;
+
+$color-darkblue-overlay: rgba(0, 67, 108, 0.8);
+
+$color-red-100:#ff4040;
+
+$color-black: #000;
+
+//todo: font-size
+$fontSize-html: 16px;
+$fontSize-08: 0.8rem;
+$fontSize-1: 1rem;
+$fontSize-2: 1.4rem;
+$fontSize-3: 1.8rem;
+$fontSize-4: 3rem;
+$fontSize-5: 4rem;
+$fontSize-6: 6rem;
+
+//todo: fontWeight
+$fontWeight-bold: bold;
+$fontWeight-normal: normal;
+$fontWeight-300: 300;
+
+//todo: padding
+$pd-1: 1px;
+$pd-6: 6px;
+$pd-8: 8px;
+$pd-10: 10px;
+$pd-20: 20px;
+$pd-25: 25px;
+$pd-30: 30px;
+$pd-35: 35px;
+$pd-40: 40px;
+
+//todo: margin
+$mg-10: 10px;
+$mg-20: 20px;
+$mg-25: 25px;
+$mg-30: 30px;
+$mg-35: 35px;
+$mg-40: 40px;
+$mg-45: 45px;
+$mg-50: 50px;
+$mg-60: 60px;
+$mg-70: 70px;
+$mg-100: 100px;
+$mg-200: 200px;
+$mg-200: 300px;

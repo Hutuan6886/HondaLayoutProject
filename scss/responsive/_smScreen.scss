@@ -1,0 +1,110 @@
+//todo:576px< screen < 768px
+@media screen and (max-width: 767.99px) {
+    #header {
+        .navbar {
+            flex-wrap: wrap;
+            .navbar_left {
+                a {
+                    font-size: $fontSize-08;
+                    letter-spacing: 1px;
+                    i {
+                        display: block;
+                    }
+                    &#logo {
+                        padding: $pd-10 $pd-20;
+                    }
+                    &#vehicles {
+                        padding: $pd-10 + 2 $pd-20;
+                        &.active {
+                            i {
+                                transform: rotate(0); //* thẻ i sẽ quay lên khi class active được gắn vào thẻ a
+                            }
+                        }
+                    }
+                    &#dealers {
+                        padding: $pd-10 + 8 $pd-20;
+                    }
+                }
+            }
+            .navbar-collapse {
+                .navbar-nav {
+                    flex-direction: column;
+                    .nav-item {
+                        padding: $pd-8 $pd-25;
+                        &.discovers-item {
+                            .discovers-navbar {
+                                position: static;
+                                margin: 10px auto;
+                                width: 90%;
+                                &::before {
+                                    display: none;
+                                }
+                                .discovers-text {
+                                    h3 {
+                                        font-size: $fontSize-2 - 0.2;
+                                    }
+                                    a {
+                                        font-size: $fontSize-08;
+                                    }
+                                }
+                            }
+                        }
+                        &.search-item {
+                            background-color: $color-white-100;
+                            text-align: center;
+                            padding: $pd-6 $pd-6;
+                            input {
+                                border: none;
+                                width: 70%;
+                                background-color: $color-white-100;
+                                outline: none; //! outline là 1 border hiện lên khi click vào ô input
+                            }
+                            button {
+                                font-size: $fontSize-08;
+                                padding: 1px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #carousel {
+        height: 650px;
+        .mySwiper {
+            padding: 0;
+            .swiper-wrapper {
+                .swiper-slide {
+                    .button-red {
+                        top: 70%;
+                    }
+                }
+            }
+        }
+    }
+    #intro-build{
+        height: 460px;
+        .intro-build-content {
+            .row {
+                .intro {
+                    margin-bottom: $mg-10;
+                    .intro-content {
+                        top: 30%;
+                        button {
+                            font-size: $fontSize-08;
+                        }
+                    }
+                }
+                .build {
+                    .build-content {
+                        top: 10%;
+                        width: 60%;
+                        button {
+                            font-size: $fontSize-08;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

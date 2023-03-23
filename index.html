@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- material -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fontawesome.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- Scroll -->
+    <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="./css/animate.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.css">
+
+    <!-- Main -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <!--//todo: header -->
+    <header id="header">
+        <!-- //todo: Navbar -->
+        <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+            <div class="navbar_left d-flex align-items-center">
+                <a href="index.html" id="logo">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
+
+                <a href="#" id="vehicles" class="d-none d-md-inline">VEHICLES <i class="fa fa-angle-down"></i></a>
+                <!-- //?: khi responsive XsScreen thì dealers nằm cạnh vehicle, và vehicle sẽ hiển thị khác -->
+                <a href="#" id="vehicles" class="d-md-inline d-md-none"><i class="material-icons">directions_car</i>
+                    Vehicles</a>
+                <a href="#" id="dealers" class="d-md-inline d-md-none"><i class="fa fa-map-marker-alt"></i>
+                    Dealers</a>
+
+                <!-- //? responsive shopping_tools -->
+                <a href="#" id="shopping_tools" class="d-none d-md-inline">SHOPPING TOOLS <i
+                        class="fa fa-angle-down"></i></a>
+
+            </div>
+            <!-- //todo: Navbar-right -->
+            <!--//todo Phần này là menu sẽ thay đổi thành button khi thu nhỏ màn hình responsive -->
+            <!-- //todo: btn ấn để mở collapse -->
+            <button class="btn-collapse d-inline d-md-none" data-bs-toggle="collapse" data-bs-target="#navbar-menu"><i
+                    class="fa fa-align-justify"></i></button>
+            <!-- //todo: nav collapse sẽ thu nhỏ lại thành nút btn -->
+            <div class="collapse navbar-collapse d-md-inline" id="navbar-menu">
+                <ul class="navbar-nav">
+                    <!-- //?: Khi responsive lớn hơn mdScreen thì shopping tools sẽ vô trong btn-collapse -->
+                    <li class="nav-item none-border d-inline d-md-none">
+                        <a href="#" id="shopping_tools" class="nav-link">Shopping tools</a>
+                    </li>
+                    <li class="nav-item none-border d-none d-md-inline">
+                        <a href="#" class="nav-link d-none d-md-inline"><i class="fa fa-map-marker-alt"></i> Dealers</a>
+                    </li>
+                    <li class="nav-item none-border">
+                        <a href="#" class="nav-link">Owners</a>
+                    </li>
+                    <li class="nav-item discovers-item dropdown">
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">Discovers</a>
+                        <div class="discovers-navbar dropdown-menu animate__animated animate__fadeInUp">
+                            <div class="discovers-text">
+                                <div class="discovers-left">
+                                    <h3>Technology</h3>
+                                    <a href="#">Environmental Vehicles</a>
+                                    <a href="#">How to Videos & Guides by Vehicle</a>
+                                    <a href="#">Honda Sensing</a>
+                                    <a href="#">Honda Safety</a>
+                                </div>
+                                <div class="discovers-right">
+                                    <h3>Community</h3>
+                                    <a href="#">News & Events</a>
+                                    <a href="#">Serial One</a>
+                                    <a href="#">Auto Shows</a>
+                                </div>
+                            </div>
+                            <div class="discovers-icon">
+                                <div class="icon"><i class="fab fa-facebook-f"></i></div>
+                                <div class="icon"><i class="fab fa-instagram"></i></div>
+                                <div class="icon"><i class="fab fa-twitter"></i></div>
+                                <div class="icon"><i class="fab fa-youtube"></i></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">English</a>
+                    </li>
+                    <li class="nav-item search-item d-none d-md-inline">
+                        <a href="#search" class="nav-link" data-bs-toggle="collapse"><i class="fa fa-search"></i><i
+                                class="fa fa-times"></i></a>
+                        <!-- //todo: search -->
+                        <!-- //* Để mở phần search sử dụng href di chuyển tới id, data-data-bs-toggle thực hiện mở class -->
+                        <div id="search" class="search-type collapse">
+                            <i class="fa fa-search"></i>
+                            <input type="text" placeholder="Search for anything Honda">
+                            <button class="n-button-blue">SEARCH</button>
+                        </div>
+                    </li>
+                    <li class="search-item nav-item d-inline d-md-none">
+                        <!--//? responsive-search -->
+                        <i class="fa fa-search"></i>
+                        <input type="text" placeholder="Search for anything Honda">
+                        <button class="n-button-blue">SEARCH</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- //todo: /navbar-right--------------------------- -->
+        </nav>
+        <!--//todo vehicle trong phần nav -->
+        <section id="vehicle-navbar" class="hide-vehicle">
+            <section class="vehicle-nav-content">
+                <nav class="vehicle-nav animate__animated">
+                    <ul>
+                        <li href="#" id="sedan" class="active">SEDANS</li>
+                        <li href="#" id="suv">CROSSOVER & SUV</li>
+                        <li href="#" id="truck">MINIVAN & TRUCK</li>
+                        <li href="#">ENVIRONMENTAL</li>
+                        <li href="#">FUTURE</li>
+                    </ul>
+                </nav>
+                <div class="vehicle-content animate__animated">
+                    <div class="vehicle-type ">
+                        <!-- //todo: sedan -->
+                        <div id="sedanScroll">
+                            <div class="vehicle-title">
+                                <hr size="2" class="line">
+                                <div class="text-title">
+                                    <span>CARS</span><i class="fa fa-circle"></i><span>Sedans</span>
+                                </div>
+                            </div>
+                            <div class="vehicle-list">
+                                <div class="row">
+                                    <!--//todo: vehicle-card -->
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div id="img-1" class="vehicle-img">
+                                            <img src="./img/xe-1.png" alt="xe1">
+                                            <img src="./img/xe-1-hover.png" alt="xe1Hover">
+                                        </div>
+                                        <h1>Civic</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$18.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div id="img-2" class="vehicle-img">
+                                            <img src="./img/xe-2.png" alt="xe2">
+                                            <img src="./img/xe-2-hover.png" alt="xe2Hover">
+                                        </div>
+                                        <h1>Civic</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$18.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div id="img-3" class="vehicle-img">
+                                            <img src="./img/xe-3.png" alt="xe3">
+                                            <img src="./img/xe-3-hover.png" alt="xe3Hover">
+                                        </div>
+                                        <h1>Civic</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$18.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div id="img-4" class="vehicle-img">
+                                            <img src="./img/xe-4.png" alt="xe4">
+                                            <img src="./img/xe-4-hover.png" alt="xe4Hover">
+                                        </div>
+                                        <h1>Civic</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$18.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <!--//todo: ------------- -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //todo: crossover -->
+                        <div id="suvScroll">
+                            <div class="vehicle-title">
+                                <hr size="2" class="line">
+                                <div class="text-title">
+                                    <span>CROSSOVER & SUV</span>
+                                </div>
+                            </div>
+                            <div class="vehicle-list">
+                                <div class="row">
+                                    <!--//todo: vehicle-card -->
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div class="vehicle-img">
+                                            <img src="./img/suv-1.jpg" alt="hrv">
+                                            <img src="./img/suv-1.jpg" alt="hrv">
+                                        </div>
+                                        <h1>HRV</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$18.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div class="vehicle-img">
+                                            <img src="./img/suv-2.jpg" alt="crv">
+                                            <img src="./img/suv-2.jpg" alt="crv">
+                                        </div>
+                                        <h1>CRV</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$25.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div class="vehicle-img">
+                                            <img src="./img/suv-3.jpg" alt="suv3">
+                                            <img src="./img/suv-3.jpg" alt="suv3">
+                                        </div>
+                                        <h1>CRV</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$18.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div class="vehicle-img">
+                                            <img src="./img/suv-4.jpg" alt="xe4">
+                                            <img src="./img/suv-4.jpg" alt="xe4">
+                                        </div>
+                                        <h1>SRV</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$18.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <!--//todo: ------------- -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //todo: truck -->
+                        <div id="truckScroll">
+                            <div class="vehicle-title">
+                                <hr size="2" class="line">
+                                <div class="text-title">
+                                    <span>MINIVAN & TRUCK</span>
+                                </div>
+                            </div>
+                            <div class="vehicle-list">
+                                <div class="row">
+                                    <!--//todo: vehicle-card -->
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div class="vehicle-img">
+                                            <img src="./img/truck-1.jpg" alt="truck">
+                                            <img src="./img/truck-1.jpg" alt="truck">
+                                        </div>
+                                        <h1>HRV</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$18.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-card col-lg-4 col-md-6 col-xs-12">
+                                        <div class="vehicle-img">
+                                            <img src="./img/truck-2.jpg" alt="truck">
+                                            <img src="./img/truck-2.jpg" alt="truck">
+                                        </div>
+                                        <h1>CRV</h1>
+                                        <div class="text-card">
+                                            <div class="text-left">
+                                                <p class="prices">$25.999</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="prices">40/28</p>
+                                                <p>Staring</p>
+                                                <p>MSRP</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="vehicle-btn">
+                                            <button class="button-blue">EXPLORE</button>
+                                            <button class="button-white">BUILD</button>
+                                        </div>
+                                    </div>
+                                    <!--//todo: ------------- -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dismiss-left"></div>
+                <div class="dismiss-right"></div>
+            </section>
+        </section>
+    </header>
+
+    <!--//todo: carousel -->
+    <section id="carousel">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide-1"><button class="button-red">EXPLORE</button></div>
+                <div class="swiper-slide slide-2"><button class="button-red">EXPLORE</button></div>
+                <div class="swiper-slide slide-3"><button class="button-red">EXPLORE</button></div>
+                <div class="swiper-slide slide-4"><button class="button-red">EXPLORE</button></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!--//todo: intro-build -->
+    <section id="intro-build">
+        <div class="intro-build-content">
+            <div class="row">
+                <div class="intro col-md-6 animate__animated animate__fadeInLeft">
+                    <div class="intro-content">
+                        <h3>Future Vehicles</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat adipisci optio voluptates
+                            suscipit aut amet incidunt architecto inventore, ex a sit non!</p>
+                        <button class="button-blue">GO</button>
+                    </div>
+                </div>
+                <div class="build col-md-6 animate__animated animate__fadeInRight">
+                    <div class="build-content">
+                        <h3>BUILD & PRICE</h3>
+                        <p>Personalize a 2018 ACCORD SEDAN to make it your own</p>
+                        <button class="button-blue">BUILD MY VEHICLE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//todo: ourVehicles -->
+    <section id="our-vehicle">
+        <h2 class="title">Our Vehicles</h2>
+        <div id="our-vehicle-slide" class="carousel slide" data-bs-ride="carousel">
+            <ul class="our-carousel-content">
+                <li class="our-carousel-nav active" data-bs-slide-to="0" data-bs-target="#our-vehicle-slide">CARS</li>
+                <li class="our-carousel-nav" data-bs-slide-to="1" data-bs-target="#our-vehicle-slide">CROSSOVER & SUVS
+                </li>
+                <li class="our-carousel-nav" data-bs-slide-to="2" data-bs-target="#our-vehicle-slide">MINIVANS & TRUCK
+                </li>
+                <li class="our-carousel-nav" data-bs-slide-to="3" data-bs-target="#our-vehicle-slide">ENVIRONMENTAL</li>
+                <li class="our-carousel-nav" data-bs-slide-to="4" data-bs-target="#our-vehicle-slide">FUTURE</li>
+            </ul>
+            <div class="carousel-inner our-carousel-img">
+                <div class="carousel-item our-carousel-item our-slide-1 active">
+                    <div class="our-vehicle-caption">
+                        <p><span>CARS 1</span>/12</p>
+                        <img src="./img/civic-logo.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni doloribus, aperiam, explicabo
+                            doloremque quis nam, et mollitia labore ea numquam amet. Sapiente, doloribus!</p>
+                        <ul class="caption-number">
+                            <li class="number">
+                                <p>$23,570</p>
+                                <p>STARTING MSRP</p>
+                            </li>
+                            <li class="number">
+                                <p>38/30</p>
+                                <p>HWY/CITY RATING</p>
+                            </li>
+                        </ul>
+                        <button class="button-red">EXPLORE</button>
+                        <button class="n-button-white">BUILD</button>
+                    </div>
+                    <div class="our-vehicle-footer">
+                        <a href="">EXPLORE THE ACCORD FAMILY</a>
+                        <img src="./img/accord-family-vehicles-2x.png" alt="">
+                    </div>
+                </div>
+                <div class="carousel-item our-carousel-item our-slide-2">
+                    <div class="our-vehicle-caption">
+                        <p><span>CARS 1</span>/12</p>
+                        <img src="./img/civic-logo.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni doloribus, aperiam, explicabo
+                            doloremque quis nam, et mollitia labore ea numquam amet. Sapiente, doloribus!</p>
+                        <ul class="caption-number">
+                            <li class="number">
+                                <p>$23,570</p>
+                                <p>STARTING MSRP</p>
+                            </li>
+                            <li class="number">
+                                <p>38/30</p>
+                                <p>HWY/CITY RATING</p>
+                            </li>
+                        </ul>
+                        <button class="button-red">EXPLORE</button>
+                        <button class="n-button-white">BUILD</button>
+                    </div>
+                    <div class="our-vehicle-footer">
+                        <a href="">EXPLORE THE ACCORD FAMILY</a>
+                        <img src="./img/accord-family-vehicles-2x.png" alt="">
+                    </div>
+                </div>
+                <div class="carousel-item our-carousel-item our-slide-3">
+                    <div class="our-vehicle-caption">
+                        <p><span>CARS 1</span>/12</p>
+                        <img src="./img/civic-logo.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni doloribus, aperiam, explicabo
+                            doloremque quis nam, et mollitia labore ea numquam amet. Sapiente, doloribus!</p>
+                        <ul class="caption-number">
+                            <li class="number">
+                                <p>$23,570</p>
+                                <p>STARTING MSRP</p>
+                            </li>
+                            <li class="number">
+                                <p>38/30</p>
+                                <p>HWY/CITY RATING</p>
+                            </li>
+                        </ul>
+                        <button class="button-red">EXPLORE</button>
+                        <button class="n-button-white">BUILD</button>
+                    </div>
+                    <div class="our-vehicle-footer">
+                        <a href="">EXPLORE THE ACCORD FAMILY</a>
+                        <img src="./img/accord-family-vehicles-2x.png" alt="">
+                    </div>
+                </div>
+                <div class="carousel-item our-carousel-item our-slide-4">
+                    <div class="our-vehicle-caption">
+                        <p><span>CARS 1</span>/12</p>
+                        <img src="./img/civic-logo.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni doloribus, aperiam, explicabo
+                            doloremque quis nam, et mollitia labore ea numquam amet. Sapiente, doloribus!</p>
+                        <ul class="caption-number">
+                            <li class="number">
+                                <p>$23,570</p>
+                                <p>STARTING MSRP</p>
+                            </li>
+                            <li class="number">
+                                <p>38/30</p>
+                                <p>HWY/CITY RATING</p>
+                            </li>
+                        </ul>
+                        <button class="button-red">EXPLORE</button>
+                        <button class="n-button-white">BUILD</button>
+                    </div>
+                    <div class="our-vehicle-footer">
+                        <a href="">EXPLORE THE ACCORD FAMILY</a>
+                        <img src="./img/accord-family-vehicles-2x.png" alt="">
+                    </div>
+                </div>
+                <div class="carousel-item our-carousel-item our-slide-5">
+                    <div class="our-vehicle-caption">
+                        <p><span>CARS 1</span>/12</p>
+                        <img src="./img/civic-logo.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni doloribus, aperiam, explicabo
+                            doloremque quis nam, et mollitia labore ea numquam amet. Sapiente, doloribus!</p>
+                        <ul class="caption-number">
+                            <li class="number">
+                                <p>$23,570</p>
+                                <p>STARTING MSRP</p>
+                            </li>
+                            <li class="number">
+                                <p>38/30</p>
+                                <p>HWY/CITY RATING</p>
+                            </li>
+                        </ul>
+                        <button class="button-red">EXPLORE</button>
+                        <button class="n-button-white">BUILD</button>
+                    </div>
+                    <div class="our-vehicle-footer">
+                        <a href="">EXPLORE THE ACCORD FAMILY</a>
+                        <img src="./img/accord-family-vehicles-2x.png" alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#our-vehicle-slide"
+                    data-bs-slide="prev">
+                    <i class="material-icons">navigate_before</i>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#our-vehicle-slide"
+                    data-bs-slide="next">
+                    <i class="material-icons">navigate_next</i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- services -->
+    <section id="services">
+        <div class="services-content">
+            <div class="row">
+                <div class="services-bg services-bg-1 col-3">
+                    <div class="services-item ">
+                        <h3>Build & Price</h3>
+                        <p>Customize a honda vehicle to make your very own</p>
+                        <button class="button-blue">Go</button>
+                    </div>
+                </div>
+                <div class="services-bg services-bg-2 col-3">
+                    <div class="services-item ">
+                        <h3>Compare Vehicles</h3>
+                        <p>Customize a honda vehicle to make your very own</p>
+                        <button class="button-blue">Go</button>
+                    </div>
+                </div>
+                <div class="services-bg services-bg-3 col-3">
+                    <div class="services-item ">
+                        <h3>Search Inventory</h3>
+                        <p>Customize a honda vehicle to make your very own</p>
+                        <button class="button-blue">Go</button>
+                    </div>
+                </div>
+                <div class="services-bg services-bg-4 col-3">
+                    <div class="services-item">
+                        <h3>Current Offers</h3>
+                        <p>Customize a honda vehicle to make your very own</p>
+                        <button class="button-blue">Go</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- news -->
+    <section id="news">
+        <div class="news-content">
+            <div class="row">
+                <div class="news-left col-6">
+                    <div class="news-item">
+                        <h3>Future Vehicles</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur itaque totam assumenda
+                            tempore, porro sequi amet sit ullam vel a.</p>
+                        <button class="button-red">Go</button>
+                    </div>
+                </div>
+                <div class="news-right col-6">
+                    <div class="news-item">
+                        <h3>Future Vehicles</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur itaque totam assumenda
+                            tempore, porro sequi amet sit ullam vel a.</p>
+                        <button class="button-red">Go</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- discover -->
+    <section id="discover-honda">
+        <h2 class="title">Discover Honda</h2>
+        <p>Explore the world of Honda through our latest news, events and videos.</p>
+        <div class="discover-honda-content">
+            <div class="row">
+                <div class="discover-honda-card discover-img-1 col-4">
+                    <div class="discover-honda-text">
+                        <h3>2017 KBB.com Most Awarded Brand</h3>
+                        <p>With more than two dozen brand and individual awards, Kelly Blue Book's KBB.com has awarded
+                            Honda as the most awarded brand of 2017.</p>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="discover-honda-card discover-img-2 col-4">
+                    <div class="discover-honda-text">
+                        <h3>Meet The Accord</h3>
+                        <p>With more than two dozen brand and individual awards, Kelly Blue Book's KBB.com has awarded
+                            Honda as the most awarded brand of 2017.</p>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="discover-honda-card discover-img-3 col-4">
+                    <div class="discover-honda-text">
+                        <h3>Innovative & Refined</h3>
+                        <p>With more than two dozen brand and individual awards, Kelly Blue Book's KBB.com has awarded
+                            Honda as the most awarded brand of 2017.</p>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="discover-honda-card discover-img-4 col-4">
+                    <div class="discover-honda-text">
+                        <h3>Honda Sensing</h3>
+                        <p>With more than two dozen brand and individual awards, Kelly Blue Book's KBB.com has awarded
+                            Honda as the most awarded brand of 2017.</p>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="discover-honda-card discover-img-5 col-4">
+                    <div class="discover-honda-text">
+                        <h3>2018 Green Car Of Year</h3>
+                        <p>With more than two dozen brand and individual awards, Kelly Blue Book's KBB.com has awarded
+                            Honda as the most awarded brand of 2017.</p>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="discover-honda-card discover-honda-last col-4">
+                    <i class="fab fa-twitter"></i>
+                    <div class="honda-status">
+                        <div class="honda-status-logo">
+                            <img src="./img/logo-honda.jpg" alt="">
+                            <div class="honda-status-name">
+                                <a href="#">Honda</a>
+                                <a href="#">@Honda</a>
+                            </div>
+                        </div>
+                        <p>You don’t know what surprises can pop up on the road. #RemoveTheDistractions 📵 when you’re
+                            behind the wheel. <a href="#">https://t.co/UC7OLudVr4</a></p>
+                        <a href="#">12:00 AM - 07 Apr 2018</a>
+                        <div class="emotion-status">
+                            <span><i class="fa fa-reply"></i> 103</span>
+                            <span><i class="fa fa-heart"></i> 23</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="button-red">MORE NEWS AND EVENTS</button>
+        </div>
+        <div class="discover-footer">
+            <div class="search-type">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search for anything Honda">
+                <button class="n-button-blue">SEARCH</button>
+            </div>
+            <div class="back-to-top">
+                <a href="#header">Back To Top</a><i class="fa fa-chevron-circle-up"></i>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-head">
+                <div class="footer-item">
+                    <h3>Vehicle</h3>
+                    <ul>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>Shopping Tools</h3>
+                    <ul>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>Discover Honda</h3>
+                    <ul>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>Help & Support</h3>
+                    <ul>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>Owners</h3>
+                    <ul>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                        <li><a href="#">Accord Models</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-mid">
+                <div class="footer-mid-left">
+                    <h3>Stay In Touch</h3>
+                    <div class="footer-icon">
+                        <div class="icon"><i class="fab fa-facebook-f"></i></div>
+                        <div class="icon"><i class="fab fa-instagram"></i></div>
+                        <div class="icon"><i class="fab fa-twitter"></i></div>
+                        <div class="icon"><i class="fab fa-youtube"></i></div>
+                    </div>
+                </div>
+                <div class="footer-mid-right">
+                    <p>Receive the latest news and exclusive updates.</p>
+                    <button class="n-button-blue"><i class="fa fa-envelope"></i> STAY INFORMED</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bot">
+            <div class="footer-bot-content">
+                <div class="footer-bot-item">
+                    <p>©2017 <a href="#">American Honda Motor Co.</a>, Inc. All information contained herein applies to U.S. vehicles only. Please see our <a href="#">Privacy Policy</a> and Legal Terms and Conditions. For non-U.S.-distributor information go to<a href="#">world.honda.com</a></p>
+                    <div class="footer-bot-nav">
+                        <ul>
+                            <li><a href="#">Vehicle Data Privacy</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Term & Conditions</a></li>
+                            <li class="none-border"><a href="#">Site Map</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bot-img">
+                    <img class="img-partner-thin" src="./img/footer-logo-1.jpg" alt="">
+                    <img class="img-partner-thin" src="./img/footer-logo-2.jpg" alt="">
+                    <img class="img-partner-long" src="./img/footer-logo-3.jpg" alt="">
+                    <img class="img-partner-thin" src="./img/footer-logo-4.jpg" alt="">
+                    <img class="img-partner-thin" src="./img/footer-logo-5.jpg" alt="">
+                    <img class="img-partner-long" src="./img/footer-logo-6.jpg" alt="">
+                    <img class="img-partner-long" src="./img/footer-logo-7.png" alt="">
+                    <img class="img-partner-long" src="./img/footer-logo-8.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Scroll -->
+    <script src="./js/jquery.mCustomScrollbar.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <!-- swiper slider -->
+    <script src="./node_modules/swiper/swiper-bundle.js"></script>
+
+    <script src="./js/style.js"></script>
+
+</body>
+
+</html>

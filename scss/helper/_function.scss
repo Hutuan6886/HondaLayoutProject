@@ -1,0 +1,54 @@
+//todo: duyệt mảng để tạo background cho card
+//todo: Tạo và duyệt 1 mảng có nhiều phần tử màu
+$array: (#00324f, 1), (#413831, 2), (#1e628b, 3), (#421d1d, 4);
+@each $bg-color, $index in $array {
+    //* Tạo ra các id có name là img-index(#img-1)
+    #img-#{$index} {
+        background: linear-gradient(#bbbdc0, $color-white-100, $color-white-100);
+        &:hover {
+            background: linear-gradient($bg-color, $color-white-100, $color-white-100);
+        }
+    }
+}
+
+//todo: Tạo slide cho carousel
+@each $stt in (1), (2), (3), (4) {
+    #carousel {
+        .mySwiper {
+            .swiper-wrapper {
+                .slide-#{$stt} {
+                    background: url("../../img/banner-#{$stt}.jpg");
+                    @extend %background;
+                    @media screen and (max-width: 768px) {
+                        background: url("../../img/banner-#{$stt}-xs.jpg");
+                        margin-top: 70px;
+                    }
+                }
+            }
+        }
+    }
+    #services {
+        .services-content {
+            .services-bg-#{$stt} {
+                background: url("../../img/item-#{$stt}.jpg");
+                @extend %background;
+            }
+        }
+    }
+}
+@each $stt in (1), (2), (3), (4), (5) {
+    #our-vehicle {
+        .carousel-inner {
+            .our-slide-#{$stt} {
+                background: url("../../img/slider-#{$stt}.jpg");
+                @extend %background;
+            }
+        }
+    }
+    #discover-honda {
+        .discover-img-#{$stt} {
+            background: url("../../img/discover-#{$stt}.jpg");
+            @extend %background;
+        }
+    }
+}

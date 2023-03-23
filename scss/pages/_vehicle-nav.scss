@@ -1,0 +1,97 @@
+#vehicle-navbar {
+    z-index: 999;
+    position: fixed;    // Để tạo cho trang vehicle-navbar hiển thị đè lên các section khác
+    top: 64px;
+    left: 0;
+    background-color: $color-darkblue-overlay;
+    .vehicle-nav-content {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        // background-color: $color-white-100;
+        .vehicle-nav {
+            background-color: $color-white;
+            ul {
+                padding: $pd-20 0;
+                margin: 0;
+                text-align: center;
+                li {
+                    list-style: none;
+                    cursor: pointer;
+                    display: inline;
+                    color: $color-darkBlue-200;
+                    font-weight: $fontWeight-bold;
+                    padding: $pd-8 $pd-20;
+                    margin: 0 auto;
+                    border-right: 1px solid $color-white-400;
+
+                    transition: all 0.5s;
+                    &:hover {
+                        color: $color-blue-300;
+                        text-decoration: 2px underline;
+                    }
+                    &.active {
+                        color: $color-blue-300;
+                        text-decoration: 2px underline;
+                    }
+                }
+                li:last-child {
+                    border: 0;
+                }
+            }
+        }
+        .vehicle-content {
+            background-color: $color-white-100;
+            .vehicle-type {
+                max-height: 500px; //* set lại kích thước chiều cao có thể hiển thị của vehicle-list
+                width: 90%;
+                margin: 0 auto;
+                text-align: center;
+                background-color: $color-white-100;
+                .vehicle-title {
+                    margin-top: $mg-50;
+                    .text-title {
+                        transform: translateY(-40px);
+                        background-color: $color-white-100;
+                        letter-spacing: 1px;
+                        font-size: $fontSize-3;
+                        display: inline-block;
+                        span:first-child {
+                            font-weight: $fontWeight-bold;
+                        }
+                        i {
+                            font-size: $fontSize-08;
+                            padding: 0 $pd-10;
+
+                            transform: translateY(-5px);
+                        }
+                    }
+                }
+                .vehicle-list {
+                    background-color: $color-white-100;
+                    //todo: phần vehicle card tại đây sẽ tách riêng ra file card để dùng sau này
+                }
+            }
+        }
+        .dismiss-left{
+            position: absolute;
+            top: 0;
+            left: -352px;
+            display: block;
+            width: 350px;
+            height: 100vh;
+        }
+        .dismiss-right{
+            position: absolute;
+            top: 0;
+            right: -352px;
+            display: block;
+            width: 350px;
+            height: 100vh;
+            z-index: 999;
+        }
+    }
+    &.hide-vehicle {
+        display: none;
+    }
+}

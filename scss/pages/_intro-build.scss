@@ -1,0 +1,79 @@
+#intro-build {
+    height: 350px;
+    margin-bottom: 40px;
+    .intro-build-content {
+        width: 90%;
+        height: 100%;
+        margin: -170px auto 0;
+        .row {
+            height: 100%;
+            .intro, .build{
+                background-clip: content-box;   //! khoảng cách giữa content và border của 1 box, giá trị default là border-box, khi sử dụng padding-box thì content sẽ cách 1 border, khi sử dụng content-box thì content sẽ cách sâu vào bên trong so với border
+                //todo: nếu chỉ sử dụng border-box thì sẽ không hiển thị 2 image của intro và build cách ra được, vì vậy phải set lại giá trị content-box để 2 image cách nhau 1 khoảng padding
+
+                padding: 0 $pd-10 + 5;
+                color: $color-white;
+            }
+            .intro {
+                background-image: url(../../img/our-vehicle-intro-1.jpg);
+                @extend %background;
+
+                text-align: center;
+
+                position: relative;
+
+                .intro-content {
+                    padding: 0 $pd-10;
+
+                    position: absolute;
+                    top: 50%;
+                    h3{
+                        font-size: $fontSize-1 + 0.5;
+                        margin-bottom: $mg-10;
+                    }
+                    p{
+                        font-size: $fontSize-08;
+                        margin-bottom: $mg-20;
+                    }
+                    button {
+                        padding: $pd-6 $pd-10 + 5;
+                        &:hover {
+                            background-color: $color-black;
+                        }
+                    }
+                }
+            }
+            .build {
+                background-image: url(../../img/our-vehicles-intro-2.jpg);
+                @extend %background;
+
+                position: relative;
+
+                .build-content {
+                    width: 40%;
+                    padding: 0 $pd-10;
+
+                    position: absolute;
+                    top: 40%;
+                    h3{
+                        display: inline-block;
+                        font-size: $fontSize-1 + .5;
+                        font-weight: $fontWeight-bold;
+                        background-color: $color-darkBlue-200;
+                        padding: $pd-6 $pd-10;
+                        
+                    }
+                    p{
+                        font-size: $fontSize-1;
+                        font-weight: $fontWeight-bold;
+                        margin: $mg-20 0;
+                    }
+                    button {
+                        border: 2px solid $color-white;
+                        padding: $pd-6 $pd-10 + 5;
+                    }
+                }
+            }
+        }
+    }
+}

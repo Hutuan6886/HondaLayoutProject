@@ -1,0 +1,20 @@
+@mixin button($bg-color, $color, $boder-color) {
+    border-radius: 30px;
+    font-weight: $fontWeight-bold;
+
+    background-color: $bg-color;
+    color: $color;
+    border: 2px solid $boder-color;
+}
+
+@mixin text($fs, $color, $fw) {
+    font-size: $fs;
+    color: $color;
+    font-weight: $fw;
+}
+
+@mixin carousel-control($fs,$bg-color,$pd-y,$pd-x) {
+    font-size: $fs;
+    background-color: $bg-color;
+    padding: $pd-y $pd-x;
+}

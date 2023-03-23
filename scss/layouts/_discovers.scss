@@ -1,0 +1,57 @@
+#header {
+    .discovers-navbar {
+        //todo: position absolute được kế thừa từ class drop-menu của bootstrap nên không cần khai báo
+        top: 62px;
+        left: -300px;
+        background-color: $color-white;
+        padding: $pd-20;
+        width: 30rem;
+
+        box-shadow: 0 6px 20px 0 $color-white-400;
+        .discovers-text {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            h3 {
+                @include text($fontSize-2, $color-darkBlue-200, $fontWeight-bold);
+                margin-bottom: $pd-25;
+            }
+            a {
+                @include text($fontSize-1, $color-blue-300, $fontWeight-bold);
+                padding: 0;
+                display: block;
+                text-align: left;
+                margin-bottom: $mg-10;
+                text-decoration: none;
+                transition: all .5s;
+                &:hover{
+                    color: $color-darkBlue-100;
+                }
+            }
+            .discovers-left {
+                margin-right: $pd-20;
+            }
+        }
+        .discovers-icon {
+            text-align: center;
+            margin-top: $mg-25;
+            .icon {
+                margin: 0 $mg-10;
+            }
+        }
+
+        //todo: Tạo phần tam giác, sử dụng before
+        &::before {
+            content: "";
+            border-bottom: 15px solid $color-white;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+
+            display: block;
+
+            position: absolute;
+            top: -15px;
+            left: 355px;
+        }
+    }
+}

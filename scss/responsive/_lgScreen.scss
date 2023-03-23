@@ -1,0 +1,89 @@
+//todo: 992px < screen <1200px
+@media screen and (min-width: 992px) and (max-width: 1139px) {
+    #header {
+        .navbar {
+            .navbar-collapse {
+                .navbar-nav {
+                    .nav-item {
+                        &.search-item{
+                            #search{
+                                input{
+                                    width: 80%;
+                                }
+                                button{
+                                    padding: $pd-6 $pd-20;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #vehicle-navbar{
+            .vehicle-nav-content{
+                .vehicle-content{
+                    .vehicle-type{
+                        .vehicle-list{
+                            .vehicle-btn{
+                                button{
+                                    padding: $pd-6 $pd-20;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #intro-build{
+        .intro-build-content {
+            .row {
+
+                // .intro {
+                //     background-image: url(../../img/intr.jpg);
+                //     @extend %background;
+                //     .intro-content {
+                //         h3{
+                //             font-size: $fontSize-1 + 0.5;
+                //             margin-bottom: $mg-10;
+                //         }
+                //         p{
+                //             font-size: $fontSize-08;
+                //             margin-bottom: $mg-20;
+                //         }
+                //         button {
+                //             padding: $pd-6 $pd-10 + 5;
+                //             &:hover {
+                //                 background-color: $color-black;
+                //             }
+                //         }
+                //     }
+                // }
+                .build {
+                    .build-content {
+                        top: 10%;
+                        // h3{
+                        //     display: inline-block;
+                        //     font-size: $fontSize-1 + .5;
+                        //     font-weight: $fontWeight-bold;
+                        //     background-color: $color-darkBlue-200;
+                        //     padding: $pd-6 $pd-10;
+                            
+                        // }
+                        // p{
+                        //     font-size: $fontSize-1;
+                        //     font-weight: $fontWeight-bold;
+                        //     margin: $mg-20 0;
+                        // }
+                        button {
+                            font-size: $fontSize-08;
+                            border: 2px solid $color-white;
+                            padding: $pd-6 $pd-10 + 5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

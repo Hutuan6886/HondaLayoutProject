@@ -1,0 +1,141 @@
+#discover-honda {
+    margin-bottom: $mg-50;
+    p {
+        text-align: center;
+        color: $color-darkBlue-100;
+        font-size: $fontSize-08;
+    }
+    .discover-honda-content {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        color: $color-darkBlue-100;
+        .row {
+            .discover-honda-card {
+                height: 500px;
+
+                background-clip: content-box;
+                padding: $pd-10 + 5 $pd-6 - 1;
+
+                position: relative;
+                .discover-honda-text {
+                    padding: 0 $pd-20;
+                    position: absolute;
+                    top: 60%;
+                    h3 {
+                        font-size: $fontSize-2;
+                    }
+                    p {
+                        margin: $mg-20 0;
+                        font-size: $fontSize-1;
+                    }
+                    a {
+                        font-weight: $fontWeight-bold;
+                        text-decoration: none;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                &.discover-honda-last {
+                    position: relative;
+                    background-color: $color-white;
+
+                    .fa-twitter {
+                        position: absolute;
+                        top: 5%;
+                        right: 20px;
+
+                        font-size: $fontSize-2;
+                    }
+                    .honda-status {
+                        margin: 0 auto;
+                        padding: 0 $pd-20;
+
+                        text-align: left;
+
+                        position: absolute;
+                        top: 40%;
+                        a {
+                            text-decoration: none;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                        .honda-status-logo {
+                            display: flex;
+                            justify-content: left;
+                            img {
+                                border-radius: 10px;
+                                margin-right: $mg-10 - 5;
+                            }
+                            .honda-status-name {
+                                a {
+                                    display: block;
+                                }
+                                a:first-child {
+                                    font-weight: $fontWeight-bold;
+                                }
+                            }
+                        }
+                        p {
+                            text-align: left;
+                            font-size: $fontSize-1;
+                            margin: $mg-10 0;
+                        }
+                        .emotion-status {
+                            margin-top: $mg-10;
+                            span {
+                                margin-right: $mg-20;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        button {
+            margin: $mg-50 0;
+            padding: $pd-6 $pd-25;
+        }
+    }
+    .discover-footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $color-white;
+        cursor: pointer;
+        .search-type {
+            width: 85%;
+            background-color: $color-white;
+            i{
+                color: $color-blue-300;
+            }
+            input{
+                background-color: $color-white;
+            }
+            button {
+                margin: 0;
+            }
+        }
+        .back-to-top{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: $pd-10 + 5 $pd-20;
+
+            border-left: 1px solid $color-blue-100;
+            a{
+                text-decoration: none;
+                font-weight: $fontWeight-bold;
+                color: $color-blue-300;
+            }
+            i{
+                margin-left: $mg-10;
+                color: $color-blue-300;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,85 @@
+#header {
+    //todo: để header đi theo khi trượt
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    .navbar {
+        background-color: $color-blue-300;
+        padding: 0;
+        .navbar_left {
+            a {
+                text-decoration: none;
+                text-align: center;
+                color: $color-white;
+                padding: $pd-8 $pd-25;
+                border-right: 1px solid $color-blue-100;
+                font-size: $fontSize-1;
+                transition: all 0.3s;
+                &#vehicles {
+                    //* Nếu muốn thanh boder được full từ trên xuống dưới
+                    padding: $pd-20 $pd-25;
+                    &:hover {
+                        background-color: $color-darkBlue-100;
+                    }
+                    &.active {
+                        background-color: $color-white;
+                        color: $color-blue-300;
+                        i {
+                            transform: rotate(-180deg); //* thẻ i sẽ quay lên khi class active được gắn vào thẻ a
+                        }
+                    }
+                }
+                &#shopping_tools {
+                    padding: $pd-20 $pd-25;
+                    &:hover {
+                        background-color: $color-darkBlue-100;
+                    }
+                    &.active {
+                        background-color: $color-white;
+                        color: $color-blue-300;
+                        i {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        
+        .navbar-collapse {
+            z-index: 998;
+            .navbar-nav {
+                margin-left: auto;      //todo: căn hết qua bên phải
+                .nav-item {
+                    border-right: 1px solid $color-blue-100;
+                    padding: $pd-20 $pd-25;
+                    .nav-link {
+                        color: $color-white;
+                        padding: 0;
+                    }
+                    .dropdown-menu {
+                        border: transparent;
+                    }
+                    &.search-item {
+                        a {
+                            i:nth-child(2) {
+                                display: none;
+                                font-size: $fontSize-2;
+                            }
+                            &.active {
+                                //* dựa vào class active của collapse bootstrap để set cho thẻ i nào cần được hiện lên, khi không có active collapse thì thẻ i thứ 1 hiện, khi active collapse thì thẻ i thứ 2 hiện thẻ i thứ 1 ẩn đi.
+                                i:first-child {
+                                    display: none;
+                                }
+                                i:last-child {
+                                    display: block;
+                                }
+                            }
+                        }
+                        //todo: #search{//create trong 1 file layout riêng}
+                    }
+                }
+            }
+        }
+    }
+}

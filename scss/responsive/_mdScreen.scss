@@ -1,0 +1,126 @@
+//todo: < 992px
+@media screen and (max-width: 991.99px) {
+    #header {
+        .navbar {
+            flex-wrap: nowrap;
+            .navbar_left {
+                a {
+                    font-size: $fontSize-08;
+                    letter-spacing: 1px;
+                    padding: $pd-8 $pd-20;
+                    &#vehicles {
+                        padding: $pd-8 + 4 $pd-20;
+                        &:hover {
+                            background-color: $color-blue-300;
+                        }
+                        &.active {
+                            background-color: $color-white;
+                            color: $color-blue-300;
+                            i {
+                                transform: rotate(180); //* thẻ i sẽ quay lên khi class active được gắn vào thẻ a
+                            }
+                        }
+                    }
+                    &#shopping_tools {
+                        padding: $pd-8 + 4 $pd-20;
+                        &:hover {
+                            background-color: $color-blue-300;
+                        }
+                        &.active {
+                            background-color: $color-white;
+                            color: $color-blue-300;
+                            i {
+                                transform: rotate(180); //* thẻ i sẽ quay lên khi class active được gắn vào thẻ a
+                            }
+                        }
+                    }
+                }
+            }
+            .navbar-collapse {
+                width: 100%;
+                .navbar-nav {
+                    flex-direction: row;
+                    justify-content: right;
+                    .nav-item {
+                        padding: $pd-20 $pd-20;
+                        a {
+                            display: inline;
+                        }
+                        &.discovers-item{
+                            .discovers-navbar{
+                                position: absolute;
+                            } 
+                        }
+                        &.search-item{
+                            #search{
+                                input{
+                                    width: 70%;
+                                }
+                                button{
+                                    padding: $pd-6 $pd-20;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #vehicle-navbar{
+            .vehicle-nav-content{
+                .vehicle-nav{
+                    ul{
+                        li{
+                            border: transparent;
+                            padding: $pd-8 $pd-10;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #carousel {
+        height: 550px;  //todo: nếu set height ở màn hình md thì các màn hình nhỏ hơn md sẽ được kế thừa theo
+        .mySwiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    .button-red {
+                        font-size: $fontSize-08;
+                        padding: $pd-6 -2 $pd-20;
+                    }
+                }
+            }
+            .swiper-pagination{
+                margin-bottom: -10px;
+                .swiper-pagination-bullet{
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+        }
+    }
+    #intro-build{
+        height: 270px;
+        .intro-build-content {
+            .row {
+
+                .intro {
+                    .intro-content {
+                        top: 30%;
+                        button {
+                            font-size: $fontSize-08;
+                        }
+                    }
+                }
+                .build {
+                    .build-content {
+                        top: 10%;
+                        width: 60%;
+                        button {
+                            font-size: $fontSize-08;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
